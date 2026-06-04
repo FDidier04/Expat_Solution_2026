@@ -51,17 +51,12 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .hero-visual { position: relative; height: min(68vw, 680px); z-index: 2; }
 .hero-image-main { position: absolute; inset: 0; overflow: hidden; border-radius: 2px; clip-path: inset(0 100% 0 0); animation: reveal-image 1.2s cubic-bezier(.77,0,.18,1) .25s forwards; }
 .hero-image-main img, .hero-image-float img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
-.hero-image-main:hover .active img, .hero-image-float:hover img { transform: scale(1.035); }
-.hero-slide { position: absolute; inset: 0; margin: 0; opacity: 1; visibility: visible; transform: translateX(100%); transition: transform 1.1s cubic-bezier(.77,0,.18,1); will-change: transform; }
-.hero-slide.active { transform: translateX(0); z-index: 2; }
-.hero-slide.previous { transform: translateX(-100%); z-index: 1; }
-.hero-slide.next { transform: translateX(100%); z-index: 1; }
-.slider-controls { position: absolute; z-index: 5; left: 24px; bottom: 24px; display: flex; gap: 8px; }
-.slider-controls button { width: 25px; height: 3px; padding: 0; border: 0; background: rgba(255,255,255,.55); cursor: pointer; transition: .35s; }
-.slider-controls button.active { width: 48px; background: white; }
-.slider-arrows { position: absolute; z-index: 5; right: 20px; bottom: 18px; display: flex; gap: 8px; }
-.slider-arrows button { width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; color: white; background: rgba(4,28,60,.22); backdrop-filter: blur(8px); cursor: pointer; transition: .3s; }
-.slider-arrows button:hover { color: var(--blue); background: white; }
+.hero-slide-track { height: 100%; width: 800%; display: flex; animation: continuous-slides 36s linear infinite; will-change: transform; }
+.hero-slide { width: 12.5%; height: 100%; flex: 0 0 12.5%; position: relative; margin: 0; overflow: hidden; }
+.hero-slide img { transform: scale(1.04); }
+.hero-slide figcaption { position: absolute; left: 22px; bottom: 20px; z-index: 2; padding: 8px 12px; color: white; background: rgba(4,28,60,.45); backdrop-filter: blur(8px); font-size: 9px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; }
+.hero-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,28,60,.22), transparent 35%); }
+@keyframes continuous-slides { to { transform: translateX(-50%); } }
 .hero-caption { position: absolute; right: -32px; bottom: 18%; color: var(--blue); font-size: 8px; font-weight: 700; line-height: 1.8; letter-spacing: 2px; writing-mode: vertical-rl; text-transform: uppercase; }
 @keyframes reveal-image { to { clip-path: inset(0 0 0 0); } }
 @keyframes float-in { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }

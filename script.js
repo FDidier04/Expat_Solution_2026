@@ -3,13 +3,6 @@ const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".main-nav");
 const langButton = document.querySelector(".lang-switch");
 let language = "fr";
-const slides = [...document.querySelectorAll(".hero-slide")];
-const slideButtons = [...document.querySelectorAll(".slider-controls button")];
-const slideCaption = document.querySelector(".hero-caption");
-const previousSlideButton = document.querySelector(".slider-prev");
-const nextSlideButton = document.querySelector(".slider-next");
-let currentSlide = 0;
-let slideTimer;
 
 const setHeaderState = () => header.classList.toggle("scrolled", window.scrollY > 30);
 setHeaderState();
@@ -36,47 +29,6 @@ langButton.addEventListener("click", () => {
   langButton.innerHTML = language === "fr" ? "<strong>FR</strong><span>/</span> EN" : "FR <span>/</span><strong>EN</strong>";
 });
 
-const showSlide = (index) => {
-  currentSlide = index;
-  slides.forEach((slide, slideIndex) => {
-    slide.classList.remove("active", "previous", "next");
-    if (slideIndex === index) {
-      slide.classList.add("active");
-    } else if (slideIndex < index) {
-      slide.classList.add("previous");
-    } else {
-      slide.classList.add("next");
-    }
-  });
-  slideButtons.forEach((button, buttonIndex) => button.classList.toggle("active", buttonIndex === index));
-  if (slideCaption) slideCaption.textContent = slides[index].dataset.place;
-};
-
-const startSlider = () => {
-  clearInterval(slideTimer);
-  slideTimer = setInterval(() => showSlide((currentSlide + 1) % slides.length), 4500);
-};
-
-slideButtons.forEach((button, index) => button.addEventListener("click", () => {
-  showSlide(index);
-  startSlider();
-}));
-
-previousSlideButton?.addEventListener("click", () => {
-  showSlide((currentSlide - 1 + slides.length) % slides.length);
-  startSlider();
-});
-
-nextSlideButton?.addEventListener("click", () => {
-  showSlide((currentSlide + 1) % slides.length);
-  startSlider();
-});
-
-if (slides.length) {
-  showSlide(0);
-  startSlider();
-}
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -98,8 +50,6 @@ document.querySelectorAll(".section-heading, .intro > *, .service, .steps li, .v
 });
 
 window.addEventListener("scroll", () => {
-  const visual = document.querySelector(".hero-slide.active img");
-  if (visual && window.scrollY < window.innerHeight) {
-    visual.style.transform = `translateY(${window.scrollY * 0.05}px) scale(1.04)`;
-  }
+  const visual = document.querySelector(".hero-slide-track");
+  if (visual && window.scrollY < window.innerHeight) visual.style.marginTop = `${window.scrollY * 0.025}px`;
 }, { passive: true });
