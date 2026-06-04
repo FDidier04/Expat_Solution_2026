@@ -38,7 +38,16 @@ langButton.addEventListener("click", () => {
 
 const showSlide = (index) => {
   currentSlide = index;
-  slides.forEach((slide, slideIndex) => slide.classList.toggle("active", slideIndex === index));
+  slides.forEach((slide, slideIndex) => {
+    slide.classList.remove("active", "previous", "next");
+    if (slideIndex === index) {
+      slide.classList.add("active");
+    } else if (slideIndex < index) {
+      slide.classList.add("previous");
+    } else {
+      slide.classList.add("next");
+    }
+  });
   slideButtons.forEach((button, buttonIndex) => button.classList.toggle("active", buttonIndex === index));
   if (slideCaption) slideCaption.textContent = slides[index].dataset.place;
 };
@@ -63,7 +72,10 @@ nextSlideButton?.addEventListener("click", () => {
   startSlider();
 });
 
-if (slides.length) startSlider();
+if (slides.length) {
+  showSlide(0);
+  startSlider();
+}
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
