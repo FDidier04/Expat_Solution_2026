@@ -60,10 +60,6 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .hero-caption { position: absolute; right: -32px; bottom: 18%; color: var(--blue); font-size: 8px; font-weight: 700; line-height: 1.8; letter-spacing: 2px; writing-mode: vertical-rl; text-transform: uppercase; }
 @keyframes reveal-image { to { clip-path: inset(0 0 0 0); } }
 @keyframes float-in { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
-.hero-card { position: absolute; z-index: 4; right: 8vw; bottom: 7vw; width: 225px; padding: 22px; background: rgba(255,255,255,.91); backdrop-filter: blur(12px); border: 1px solid rgba(9,32,61,.1); box-shadow: 0 16px 40px rgba(5,29,58,.1); }
-.hero-card p { color: var(--muted); font-size: 11px; line-height: 1.5; margin-bottom: 18px; }
-.hero-card div { padding: 10px 0; display: flex; justify-content: space-between; border-top: 1px solid var(--line); font-size: 12px; }
-.hero-card div span { color: var(--blue); }
 .pulse { width: 7px; height: 7px; display: block; background: #45e0b1; border-radius: 50%; box-shadow: 0 0 0 6px rgba(69,224,177,.12); margin-bottom: 16px; }
 .hero-scroll { position: absolute; z-index: 2; bottom: 35px; left: 2.5vw; display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .hero-scroll span { width: 1px; height: 42px; background: rgba(9,32,61,.35); }
@@ -176,6 +172,12 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .contact-details span { color: rgba(255,255,255,.55); font-size: 11px; }
 .contact-arrow { width: 70px; height: 70px; display: grid; place-content: center; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; font-size: 24px; transition: .25s; }
 .contact-arrow:hover { color: var(--blue); background: white; }
+.footer-presence { width: min(430px, calc(100% - 48px)); margin: -65px 8vw 0 auto; padding: 30px; position: relative; z-index: 3; background: #f7f8fa; border: 1px solid #dce4ed; box-shadow: 0 20px 50px rgba(4,22,46,.18); }
+.footer-presence .pulse { margin-bottom: 24px; }
+.footer-presence p { max-width: 300px; margin-bottom: 28px; color: #657a94; font-size: 16px; line-height: 1.55; }
+.footer-presence div { padding: 16px 0; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #d9e2ec; }
+.footer-presence strong { font: 700 17px "Manrope"; }
+.footer-presence div span { color: var(--blue); font-size: 16px; }
 footer { padding: 27px 5vw; background: #04162e; color: white; display: flex; align-items: center; justify-content: space-between; }
 .footer-brand img { width: 140px; height: 48px; filter: brightness(0) invert(1); }
 footer p, footer > a:last-child { color: rgba(255,255,255,.45); font-size: 10px; }
@@ -193,7 +195,7 @@ footer p, footer > a:last-child { color: rgba(255,255,255,.45); font-size: 10px;
   .hero h1 { letter-spacing: -3px; }
   .hero-visual { height: 520px; margin-top: 25px; }
   .hero-image-main { inset: 0; }
-  .hero-card, .hero-scroll, .hero-caption { display: none; }
+  .hero-scroll, .hero-caption { display: none; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 22px; }
   .section { padding: 75px 24px; }
   .intro { grid-template-columns: 1fr; gap: 55px; }
@@ -211,6 +213,7 @@ footer p, footer > a:last-child { color: rgba(255,255,255,.45); font-size: 10px;
   .values-quote { margin-top: 45px; padding: 45px 28px 30px; }
   .contact { grid-template-columns: 1fr; }
   .contact-arrow { display: none; }
+  .footer-presence { margin: 0 auto; width: 100%; box-shadow: none; border-width: 0 0 1px; }
 }
 
 @media (max-width: 560px) {
