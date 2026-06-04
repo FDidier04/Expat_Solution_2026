@@ -6,6 +6,8 @@ let language = "fr";
 const slides = [...document.querySelectorAll(".hero-slide")];
 const slideButtons = [...document.querySelectorAll(".slider-controls button")];
 const slideCaption = document.querySelector(".hero-caption");
+const previousSlideButton = document.querySelector(".slider-prev");
+const nextSlideButton = document.querySelector(".slider-next");
 let currentSlide = 0;
 let slideTimer;
 
@@ -50,6 +52,16 @@ slideButtons.forEach((button, index) => button.addEventListener("click", () => {
   showSlide(index);
   startSlider();
 }));
+
+previousSlideButton?.addEventListener("click", () => {
+  showSlide((currentSlide - 1 + slides.length) % slides.length);
+  startSlider();
+});
+
+nextSlideButton?.addEventListener("click", () => {
+  showSlide((currentSlide + 1) % slides.length);
+  startSlider();
+});
 
 if (slides.length) startSlider();
 
