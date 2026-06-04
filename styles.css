@@ -89,18 +89,27 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 50px; margin-bottom: 65px; }
 .section-heading > p { max-width: 340px; color: var(--muted); line-height: 1.7; font-size: 14px; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-.service { min-height: 290px; padding: 30px; position: relative; background: #fff; border: 1px solid var(--line); margin: 0 -1px -1px 0; transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
-.service:hover { z-index: 1; transform: translateY(-5px); box-shadow: 0 18px 50px rgba(11,45,84,.12); }
-.service.featured { background: var(--blue); color: #fff; border-color: var(--blue); }
+.service { min-height: 290px; padding: 30px; position: relative; overflow: hidden; isolation: isolate; background: rgba(255,255,255,.94); border: 1px solid var(--line); margin: 0 -1px -1px 0; transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s, color .45s, border-color .45s; }
+.service:hover, .service.active { z-index: 1; color: white; border-color: transparent; transform: translateY(-5px); box-shadow: 0 18px 50px rgba(11,45,84,.2); }
+.service-bg { position: absolute; inset: 0; z-index: -2; background-position: center; background-size: cover; clip-path: inset(100% 0 0); transform: scale(1.08); transition: clip-path .75s cubic-bezier(.77,0,.18,1), transform 5s ease; }
+.service::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; background: linear-gradient(145deg, rgba(3,41,89,.82), rgba(5,92,193,.68)); transition: opacity .55s; }
+.service:hover .service-bg, .service.active .service-bg { clip-path: inset(0); transform: scale(1); }
+.service:hover::before, .service.active::before { opacity: 1; }
+.service-bg-legal { background-image: url("assets/value-proximity.png"); }
+.service-bg-audit { background-image: url("assets/value-reactivity.png"); }
+.service-bg-invest { background-image: url("assets/brazzaville-hero.png"); }
+.service-bg-market { background-image: url("assets/congo-river.png"); }
+.service-bg-funding { background-image: url("assets/paris-louvre.png"); }
+.service-bg-project { background-image: url("assets/value-sustainability.png"); }
 .service-number { position: absolute; right: 22px; top: 20px; color: #9eadbd; font-size: 10px; }
-.featured .service-number { color: rgba(255,255,255,.6); }
+.service:hover .service-number, .service.active .service-number { color: rgba(255,255,255,.65); }
 .service-icon { height: 80px; color: var(--blue); font-size: 29px; }
-.featured .service-icon { color: white; }
+.service:hover .service-icon, .service.active .service-icon { color: white; }
 .service h3 { font-size: 17px; margin-bottom: 12px; }
 .service p { color: var(--muted); font-size: 13px; line-height: 1.65; max-width: 270px; }
-.featured p { color: rgba(255,255,255,.72); }
+.service:hover p, .service.active p { color: rgba(255,255,255,.82); }
 .service > a { position: absolute; right: 25px; bottom: 22px; color: var(--blue); }
-.featured > a { color: white; }
+.service:hover > a, .service.active > a { color: white; }
 
 .process { color: var(--ink); background: #f7f8fa; position: relative; overflow: hidden; text-align: center; }
 .process::before { content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%; border: 1px solid #e9eef4; right: -260px; top: -270px; box-shadow: 0 0 0 70px rgba(230,238,247,.25); }

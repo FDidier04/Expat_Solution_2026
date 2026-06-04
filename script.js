@@ -44,7 +44,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(".section-heading, .intro > *, .service, .steps li, .values-copy, .values-list article, .contact > *").forEach((item, index) => {
+document.querySelectorAll(".section-heading, .intro > *, .services-grid, .steps li, .values-copy, .values-list article, .contact > *").forEach((item, index) => {
   item.dataset.delay = (index % 3) * 90;
   observer.observe(item);
 });
@@ -62,6 +62,30 @@ document.querySelectorAll(".value-card").forEach((card) => {
     card.style.setProperty("--move-y", "0px");
   });
 });
+
+const serviceCards = [...document.querySelectorAll(".service")];
+let activeService = 0;
+let serviceTimer;
+
+const activateService = (index) => {
+  activeService = index;
+  serviceCards.forEach((card, cardIndex) => card.classList.toggle("active", cardIndex === index));
+};
+
+const startServiceCycle = () => {
+  clearInterval(serviceTimer);
+  serviceTimer = setInterval(() => activateService((activeService + 1) % serviceCards.length), 3200);
+};
+
+serviceCards.forEach((card, index) => {
+  card.addEventListener("pointerenter", () => {
+    activateService(index);
+    clearInterval(serviceTimer);
+  });
+  card.addEventListener("pointerleave", startServiceCycle);
+});
+
+if (serviceCards.length) startServiceCycle();
 
 window.addEventListener("scroll", () => {
   const visual = document.querySelector(".hero-slide-track");
