@@ -44,7 +44,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(".section-heading, .intro > *, .services-grid, .steps li, .values-copy, .values-list article, .contact > *").forEach((item, index) => {
+document.querySelectorAll(".section-heading, .intro > *, .services-grid, .steps li, .news-cover, .news-content, .values-copy, .values-list article, .contact > *").forEach((item, index) => {
   item.dataset.delay = (index % 3) * 90;
   observer.observe(item);
 });
