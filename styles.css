@@ -116,13 +116,25 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .logo-track > span { min-width: 240px; height: 110px; display: grid; place-content: center; text-align: center; color: #9aa7b6; font: 800 17px "Manrope"; border-right: 1px solid var(--line); }
 .logo-track > span span, .logo-track b { color: #b9c2cc; font-size: 9px; letter-spacing: 2px; display: block; }
 @keyframes marquee { to { transform: translateX(-50%); } }
-.values { background: var(--ice); display: grid; grid-template-columns: 1fr 1fr; gap: 9vw; }
-.values-copy > p:last-child { color: var(--muted); line-height: 1.8; max-width: 420px; margin-top: 30px; }
-.values-list article { display: grid; grid-template-columns: 45px 1fr; gap: 30px; padding: 30px 0; border-top: 1px solid #cdddeb; }
-.values-list article:last-child { border-bottom: 1px solid #cdddeb; }
-.values-list article > span { color: var(--blue); font-size: 11px; }
-.values-list h3 { margin-bottom: 8px; font-size: 20px; }
-.values-list p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.values { background: #f7f8fa; display: block; }
+.values-copy { text-align: center; margin-bottom: 65px; }
+.values-copy h2 { font-size: clamp(36px, 4vw, 55px); text-transform: uppercase; }
+.values-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.value-card { min-height: 410px; position: relative; overflow: hidden; display: grid; place-items: center; color: white; text-align: center; background-position: center; background-size: cover; }
+.value-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(3,19,40,.44), rgba(3,19,40,.68)); transition: background .4s; }
+.value-card::after { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(255,255,255,0); transition: .4s; }
+.value-card:hover::before { background: linear-gradient(rgba(4,35,74,.55), rgba(4,35,74,.78)); }
+.value-card:hover::after { inset: 12px; border-color: rgba(255,255,255,.45); }
+.value-card > div { max-width: 330px; padding: 35px; position: relative; z-index: 1; }
+.value-card h3 { margin-bottom: 15px; color: white; font-size: 20px; text-transform: uppercase; }
+.value-card p { margin: 0; color: rgba(255,255,255,.9); font-size: 14px; line-height: 1.8; }
+.value-proximity { background-image: url("assets/value-proximity.png"); }
+.value-reactivity { background-image: url("assets/value-reactivity.png"); }
+.value-sustainability { background-image: url("assets/value-sustainability.png"); }
+.values-quote { margin: 65px 0 0; padding: 48px 55px 38px; position: relative; background: white; border: 0; }
+.values-quote > span { width: 42px; height: 42px; position: absolute; left: calc(50% - 21px); top: -21px; display: grid; place-content: center; color: white; background: var(--blue); border-radius: 50%; font: 700 30px Georgia, serif; }
+.values-quote p { margin: 0; color: var(--ink); font: 500 clamp(18px, 2vw, 25px)/1.55 "Manrope"; letter-spacing: -.8px; }
+.values-quote cite { display: block; margin-top: 35px; color: var(--blue); font-size: 13px; font-style: normal; font-weight: 700; text-align: right; }
 
 .contact { background: var(--blue); color: white; display: grid; grid-template-columns: 1.1fr .9fr 80px; gap: 6vw; align-items: end; }
 .contact h2 { font-size: clamp(40px, 5vw, 70px); }
@@ -154,7 +166,7 @@ footer p, footer > a:last-child { color: rgba(255,255,255,.45); font-size: 10px;
   .hero-card, .hero-scroll, .hero-caption { display: none; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 22px; }
   .section { padding: 75px 24px; }
-  .intro, .values { grid-template-columns: 1fr; gap: 55px; }
+  .intro { grid-template-columns: 1fr; gap: 55px; }
   .section-heading { display: block; }
   .section-heading > p { margin-top: 25px; }
   .section h2 { letter-spacing: -2px; }
@@ -164,6 +176,9 @@ footer p, footer > a:last-child { color: rgba(255,255,255,.45); font-size: 10px;
   .steps::before { display: none; }
   .step-label { margin-bottom: 15px; }
   .stats { grid-template-columns: repeat(3, 1fr); margin: 30px 24px 75px; padding: 0; }
+  .values-list { grid-template-columns: 1fr; gap: 20px; }
+  .value-card { min-height: 370px; }
+  .values-quote { margin-top: 45px; padding: 45px 28px 30px; }
   .contact { grid-template-columns: 1fr; }
   .contact-arrow { display: none; }
 }
