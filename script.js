@@ -3,6 +3,11 @@ const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".main-nav");
 const langButton = document.querySelector(".lang-switch");
 let language = "fr";
+const slides = [...document.querySelectorAll(".hero-slide")];
+const slideButtons = [...document.querySelectorAll(".slider-controls button")];
+const slideCaption = document.querySelector(".hero-caption");
+let currentSlide = 0;
+let slideTimer;
 
 const setHeaderState = () => header.classList.toggle("scrolled", window.scrollY > 30);
 setHeaderState();
@@ -29,6 +34,25 @@ langButton.addEventListener("click", () => {
   langButton.innerHTML = language === "fr" ? "<strong>FR</strong><span>/</span> EN" : "FR <span>/</span><strong>EN</strong>";
 });
 
+const showSlide = (index) => {
+  currentSlide = index;
+  slides.forEach((slide, slideIndex) => slide.classList.toggle("active", slideIndex === index));
+  slideButtons.forEach((button, buttonIndex) => button.classList.toggle("active", buttonIndex === index));
+  if (slideCaption) slideCaption.textContent = slides[index].dataset.place;
+};
+
+const startSlider = () => {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(() => showSlide((currentSlide + 1) % slides.length), 4500);
+};
+
+slideButtons.forEach((button, index) => button.addEventListener("click", () => {
+  showSlide(index);
+  startSlider();
+}));
+
+if (slides.length) startSlider();
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -50,7 +74,7 @@ document.querySelectorAll(".section-heading, .intro > *, .service, .steps li, .v
 });
 
 window.addEventListener("scroll", () => {
-  const visual = document.querySelector(".hero-image-main img");
+  const visual = document.querySelector(".hero-slide.active img");
   if (visual && window.scrollY < window.innerHeight) {
     visual.style.transform = `translateY(${window.scrollY * 0.05}px) scale(1.04)`;
   }
