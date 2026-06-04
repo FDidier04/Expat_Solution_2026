@@ -77,7 +77,15 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .intro-copy p:first-child { color: var(--ink); font-size: 20px; line-height: 1.6; }
 .intro-copy .text-link { margin-top: 14px; }
 
-.expertise { background: #fff; border-top: 1px solid var(--line); }
+.expertise { position: relative; overflow: hidden; background: rgba(255,255,255,.88); border-top: 1px solid var(--line); isolation: isolate; }
+.expertise-moving-bg { position: absolute; inset: -12%; z-index: -2; background: url("assets/brazzaville-hero.png") center/cover no-repeat; opacity: .16; animation: expertise-pan 22s ease-in-out infinite alternate; will-change: transform; }
+.expertise::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(135deg, rgba(255,255,255,.97), rgba(244,249,255,.84) 52%, rgba(255,255,255,.92)); }
+.expertise .section-heading, .expertise .services-grid { position: relative; z-index: 1; }
+@keyframes expertise-pan {
+  0% { transform: scale(1.05) translate3d(-2%, -1%, 0); }
+  50% { transform: scale(1.12) translate3d(2%, 1%, 0); }
+  100% { transform: scale(1.07) translate3d(1%, -2%, 0); }
+}
 .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 50px; margin-bottom: 65px; }
 .section-heading > p { max-width: 340px; color: var(--muted); line-height: 1.7; font-size: 14px; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
