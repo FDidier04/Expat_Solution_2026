@@ -49,6 +49,20 @@ document.querySelectorAll(".section-heading, .intro > *, .service, .steps li, .v
   observer.observe(item);
 });
 
+document.querySelectorAll(".value-card").forEach((card) => {
+  card.addEventListener("pointermove", (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width - .5) * -14;
+    const y = ((event.clientY - rect.top) / rect.height - .5) * -14;
+    card.style.setProperty("--move-x", `${x}px`);
+    card.style.setProperty("--move-y", `${y}px`);
+  });
+  card.addEventListener("pointerleave", () => {
+    card.style.setProperty("--move-x", "0px");
+    card.style.setProperty("--move-y", "0px");
+  });
+});
+
 window.addEventListener("scroll", () => {
   const visual = document.querySelector(".hero-slide-track");
   if (visual && window.scrollY < window.innerHeight) visual.style.marginTop = `${window.scrollY * 0.025}px`;
