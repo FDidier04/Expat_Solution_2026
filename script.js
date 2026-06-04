@@ -87,6 +87,31 @@ serviceCards.forEach((card, index) => {
 
 if (serviceCards.length) startServiceCycle();
 
+const counters = [...document.querySelectorAll(".counter")];
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    const counter = entry.target;
+    const target = Number(counter.dataset.target);
+    const prefix = counter.dataset.prefix || "";
+    const suffix = counter.dataset.suffix || "";
+    const duration = 1700;
+    const start = performance.now();
+
+    const updateCounter = (time) => {
+      const progress = Math.min((time - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 4);
+      counter.textContent = `${prefix}${Math.floor(target * eased)}${suffix}`;
+      if (progress < 1) requestAnimationFrame(updateCounter);
+    };
+
+    requestAnimationFrame(updateCounter);
+    counterObserver.unobserve(counter);
+  });
+}, { threshold: .65 });
+
+counters.forEach((counter) => counterObserver.observe(counter));
+
 window.addEventListener("scroll", () => {
   const visual = document.querySelector(".hero-slide-track");
   if (visual && window.scrollY < window.innerHeight) visual.style.marginTop = `${window.scrollY * 0.025}px`;

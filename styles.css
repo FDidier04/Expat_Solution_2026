@@ -124,6 +124,7 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .stats { margin: 45px 8vw 110px; display: grid; grid-template-columns: repeat(6, 1fr); padding: 0 18px; background: #f7f8fa; color: var(--ink); }
 .stats div { min-height: 145px; padding: 28px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; }
 .stats strong { font: 600 clamp(25px, 2.8vw, 40px) "Manrope"; letter-spacing: -2px; }
+.stats .counter { min-width: 90px; font-variant-numeric: tabular-nums; }
 .stats span { max-width: 105px; color: var(--muted); font-size: 10px; line-height: 1.45; }
 
 .compact { margin-bottom: 45px; }
