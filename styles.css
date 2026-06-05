@@ -194,12 +194,12 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .consultation-form button:hover { transform: translateY(-2px); background: var(--navy); }
 .contact-arrow { display: none; }
 .site-footer { padding: 34px 5vw 24px; color: var(--ink); background: white; border-top: 4px solid #050505; }
-.footer-contact-panel { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 36px; align-items: start; padding-bottom: 28px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
+.footer-contact-panel { display: grid; grid-template-columns: minmax(240px, 340px) 1fr; gap: 36px; align-items: start; padding-bottom: 28px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
 .footer-contact-panel div { display: flex; flex-direction: column; gap: 6px; }
 .footer-contact-panel small { color: #8d9bad; font-size: 8px; font-weight: 700; letter-spacing: 2.5px; }
-.footer-contact-panel a, .footer-contact-panel strong { color: var(--ink); font-size: 18px; font-weight: 800; }
-.footer-contact-panel span { color: #65758a; font-size: 13px; line-height: 1.45; }
-.footer-mini-social { display: flex; gap: 15px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+.footer-contact-panel a, .footer-contact-panel strong { color: var(--ink); font-size: 13px; font-weight: 800; }
+.footer-contact-panel span { color: #65758a; font-size: 11px; line-height: 1.45; }
+.footer-mini-social { display: flex; gap: 15px; align-items: center; justify-content: flex-end; flex-wrap: wrap; grid-column: 2; grid-row: 1 / span 3; }
 .footer-mini-social a { color: #5d6c80; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 .footer-bottom { display: flex; align-items: center; gap: 34px; color: #001632; font-size: 14px; }
 .footer-bottom p { margin: 0; }
@@ -242,7 +242,7 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
   .consultation-form h3 { margin: 0 -24px 24px; padding: 17px 24px; }
   .form-grid { grid-template-columns: 1fr; gap: 0; }
   .footer-contact-panel { grid-template-columns: 1fr; gap: 22px; text-align: center; }
-  .footer-mini-social { justify-content: center; }
+  .footer-mini-social { grid-column: auto; grid-row: auto; justify-content: center; }
 }
 
 @media (max-width: 560px) {
