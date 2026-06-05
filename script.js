@@ -63,6 +63,16 @@ document.querySelectorAll(".value-card").forEach((card) => {
   });
 });
 
+const valueCards = [...document.querySelectorAll(".value-card")];
+let activeValue = 0;
+
+if (valueCards.length) {
+  setInterval(() => {
+    valueCards.forEach((card, index) => card.classList.toggle("zooming", index === activeValue));
+    activeValue = (activeValue + 1) % valueCards.length;
+  }, 1800);
+}
+
 const serviceCards = [...document.querySelectorAll(".service")];
 let activeService = 0;
 let serviceTimer;
