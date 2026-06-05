@@ -241,26 +241,38 @@
         <p class="eyebrow light" data-fr="Nous contacter" data-en="Contact us">Nous contacter</p>
         <h2 data-fr="Votre projet mérite un premier échange." data-en="Your project deserves a first conversation.">Votre projet mérite<br>un premier échange.</h2>
         <p data-fr="Simplifiez vos démarches, concrétisez vos ambitions." data-en="Simplify your processes, achieve your ambitions.">Simplifiez vos démarches, concrétisez vos ambitions.</p>
-      </div>
-      <div class="contact-details">
-        <div class="contact-card-top">
-          <a class="contact-card-logo" href="#top" aria-label="ExpatSolutions - Accueil">
-            <img src="assets/logo-expat-solutions.png" alt="ExpatSolutions">
-          </a>
-          <nav class="contact-social" aria-label="Réseaux sociaux">
-            <a href="#" aria-label="Facebook"><span>f</span>Facebook</a>
-            <a href="#" aria-label="LinkedIn"><span>in</span>LinkedIn</a>
-            <a href="#" aria-label="Twitter"><span>𝕏</span>Twitter</a>
-            <a href="#" aria-label="Youtube"><span>▶</span>Youtube</a>
-          </nav>
-        </div>
-        <div class="contact-card-info">
+        <div class="contact-quick">
           <div><small>CONGO</small><a href="tel:+242066479724">+242 06 647 9724</a><span>Brazzaville, République du Congo</span></div>
           <div><small>FRANCE</small><a href="tel:+33749145995">+33 7 49 14 59 95</a><span>Paris, France</span></div>
           <div><small data-fr="HORAIRES" data-en="OPENING HOURS">HORAIRES</small><strong data-fr="Lun — Ven · 9h00 — 18h00" data-en="Mon — Fri · 9am — 6pm">Lun — Ven · 9h00 — 18h00</strong></div>
         </div>
-        <a class="contact-card-mail" href="mailto:contact@expatsolutions.com">contact@expatsolutions.com</a>
       </div>
+      <form class="consultation-form" action="mailto:contact@expatsolutions.com" method="post" enctype="text/plain">
+        <h3 data-fr="Planifiez une consultation gratuite" data-en="Schedule a free consultation">Planifiez une consultation gratuite</h3>
+        <span class="form-mark" aria-hidden="true">⌄</span>
+        <div class="form-grid">
+          <label>Prénom <em>*</em><input type="text" name="prenom" placeholder="Exemple : Jane" required></label>
+          <label>Nom <em>*</em><input type="text" name="nom" placeholder="Exemple : Doe" required></label>
+        </div>
+        <label>Forme juridique <em>*</em><input type="text" name="forme_juridique" placeholder="Exemples : EI / SARL / SAS / SAS / AUTRE" required></label>
+        <label>Email Professionnel <em>*</em><input type="email" name="email" placeholder="Exemple : jane.doe@exemple.com" required></label>
+        <label>Téléphone <em>*</em><input type="tel" name="telephone" placeholder="Exemple : +33000000000" required></label>
+        <label>Quel pôle souhaitez-vous contacter? <em>*</em>
+          <select name="pole" required>
+            <option>POLE DIGITAL</option>
+            <option>ASSISTANCE JURIDIQUE</option>
+            <option>CONSEIL EN INVESTISSEMENT</option>
+            <option>ÉTUDES DE MARCHÉ</option>
+            <option>PROJET SUR MESURE</option>
+          </select>
+        </label>
+        <label>Message <em>*</em><textarea name="message" placeholder="Exemple : Entrer votre message ici ...." required></textarea></label>
+        <div class="fake-recaptcha" aria-label="protected by reCAPTCHA">
+          <span>protected by reCAPTCHA</span>
+          <strong>↻</strong>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
       <a class="contact-arrow" href="mailto:contact@expatsolutions.com" aria-label="Envoyer un e-mail">↗</a>
     </section>
   </main>
