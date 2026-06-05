@@ -193,17 +193,16 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .consultation-form button { border: 0; border-radius: 4px; padding: 13px 25px; color: white; background: #1f4d82; font: 700 15px "DM Sans"; cursor: pointer; transition: .25s; }
 .consultation-form button:hover { transform: translateY(-2px); background: var(--navy); }
 .contact-arrow { display: none; }
-.site-footer { padding: 34px 5vw 24px; color: var(--ink); background: white; border-top: 4px solid #050505; }
-.footer-contact-panel { display: grid; grid-template-columns: minmax(240px, 340px) 1fr; gap: 36px; align-items: start; padding-bottom: 28px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
-.footer-contact-panel div { display: flex; flex-direction: column; gap: 6px; }
-.footer-contact-panel small { color: #8d9bad; font-size: 8px; font-weight: 700; letter-spacing: 2.5px; }
-.footer-contact-panel a, .footer-contact-panel strong { color: var(--ink); font-size: 13px; font-weight: 800; }
-.footer-contact-panel span { color: #65758a; font-size: 11px; line-height: 1.45; }
-.footer-mini-social { display: flex; gap: 15px; align-items: center; justify-content: flex-end; flex-wrap: wrap; grid-column: 2; grid-row: 1 / span 3; }
-.footer-mini-social a { color: #5d6c80; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-.footer-bottom { display: flex; align-items: center; gap: 34px; color: #001632; font-size: 14px; }
+.site-footer { padding: 14px 5vw 16px; color: var(--ink); background: white; border-top: 4px solid #050505; }
+.footer-main { display: grid; grid-template-columns: 1.1fr 1.4fr 1.4fr 1.6fr; gap: 38px; align-items: start; }
+.footer-logo-small img { width: 180px; height: 58px; display: block; object-fit: contain; object-position: left center; }
+.footer-main address, .footer-phones { display: flex; flex-direction: column; gap: 4px; margin: 0; color: #56667a; font-style: normal; font-size: 13px; line-height: 1.35; }
+.footer-phones a { color: #56667a; }
+.footer-mini-social { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; text-align: center; }
+.footer-mini-social a { display: flex; flex-direction: column; align-items: center; gap: 2px; color: #001632; font-size: 11px; }
+.footer-mini-social span { height: 20px; display: grid; place-content: center; color: #111; font: 800 19px "Manrope"; line-height: 1; }
+.footer-bottom { margin-top: 18px; display: flex; align-items: center; justify-content: center; gap: 34px; color: #001632; font-size: 12px; }
 .footer-bottom p { margin: 0; }
-.footer-badge { width: 54px; height: 54px; flex: 0 0 auto; display: grid; place-content: center; color: white; background: var(--blue); border-radius: 50%; font-size: 24px; box-shadow: inset 0 0 0 5px rgba(255,255,255,.15); }
 .footer-bottom a { white-space: nowrap; }
 
 @media (max-width: 900px) {
@@ -241,8 +240,9 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
   .consultation-form { justify-self: stretch; width: 100%; padding: 0 24px 28px; }
   .consultation-form h3 { margin: 0 -24px 24px; padding: 17px 24px; }
   .form-grid { grid-template-columns: 1fr; gap: 0; }
-  .footer-contact-panel { grid-template-columns: 1fr; gap: 22px; text-align: center; }
-  .footer-mini-social { grid-column: auto; grid-row: auto; justify-content: center; }
+  .footer-main { grid-template-columns: 1fr; gap: 18px; text-align: center; }
+  .footer-logo-small img { margin: 0 auto; object-position: center; }
+  .footer-mini-social { max-width: 360px; margin: 0 auto; width: 100%; }
 }
 
 @media (max-width: 560px) {
