@@ -176,10 +176,10 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .values-quote cite { display: block; margin-top: 35px; color: var(--blue); font-size: 13px; font-style: normal; font-weight: 700; text-align: right; }
 
 .contact { background: var(--blue); color: white; display: grid; grid-template-columns: .85fr 1.15fr; gap: 6vw; align-items: center; }
-.contact h2 { font-size: clamp(40px, 5vw, 70px); }
+.contact h1, .contact h2 { font-size: clamp(40px, 5vw, 70px); line-height: 1.08; }
 .contact > div:first-child > p:last-child { color: rgba(255,255,255,.65); margin-top: 25px; }
 .consultation-form { width: min(520px, 100%); justify-self: end; padding: 0 34px 28px; color: var(--ink); background: white; box-shadow: 0 25px 70px rgba(4,22,46,.2); }
-.consultation-form h3 { margin: 0 -34px 22px; padding: 14px 34px; text-align: center; font-size: 21px; border-bottom: 1px solid var(--line); }
+.consultation-form h2, .consultation-form h3 { margin: 0 -34px 22px; padding: 14px 34px; text-align: center; font-size: 21px; line-height: 1.25; letter-spacing: 0; border-bottom: 1px solid var(--line); }
 .form-mark { width: 28px; height: 28px; display: grid; place-content: center; margin: -35px auto 22px; color: var(--ink); background: white; border-radius: 50%; font-size: 25px; transform: rotate(25deg); }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .consultation-form label { display: flex; flex-direction: column; gap: 7px; margin-bottom: 13px; color: var(--ink); font-size: 14px; }
@@ -193,6 +193,12 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
 .consultation-form button { border: 0; border-radius: 4px; padding: 13px 25px; color: white; background: #1f4d82; font: 700 15px "DM Sans"; cursor: pointer; transition: .25s; }
 .consultation-form button:hover { transform: translateY(-2px); background: var(--navy); }
 .contact-arrow { display: none; }
+.contact-page .site-header { background: rgba(255,255,255,.92); backdrop-filter: blur(16px); }
+.contact-standalone { min-height: calc(100vh - 96px); padding-top: 150px; }
+.contact-standalone > div:first-child { max-width: 620px; }
+.contact-standalone > div:first-child > p:not(.eyebrow) { max-width: 500px; color: rgba(255,255,255,.72); font-size: 17px; line-height: 1.7; }
+.contact-details { margin-top: 35px; display: flex; flex-direction: column; gap: 11px; color: rgba(255,255,255,.85); font-weight: 700; }
+.contact-details a { width: fit-content; border-bottom: 1px solid rgba(255,255,255,.35); padding-bottom: 4px; }
 .site-footer { padding: 12px 5vw 14px; color: var(--ink); background: #fff; border-top: 1px solid #e4e8ee; }
 .footer-main { display: grid; grid-template-columns: .9fr 1.35fr 1.35fr 1.3fr; gap: 28px; align-items: start; }
 .footer-logo-small img { width: 135px; height: 42px; display: block; object-fit: contain; object-position: left center; }
@@ -238,8 +244,9 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
   .values-quote { margin-top: 45px; padding: 45px 28px 30px; }
   .contact { grid-template-columns: 1fr; }
   .consultation-form { justify-self: stretch; width: 100%; padding: 0 24px 28px; }
-  .consultation-form h3 { margin: 0 -24px 24px; padding: 17px 24px; }
+  .consultation-form h2, .consultation-form h3 { margin: 0 -24px 24px; padding: 17px 24px; }
   .form-grid { grid-template-columns: 1fr; gap: 0; }
+  .contact-standalone { min-height: auto; padding-top: 110px; }
   .footer-main { grid-template-columns: 1fr; gap: 12px; text-align: center; }
   .footer-logo-small img { margin: 0 auto; object-position: center; }
   .footer-mini-social { max-width: 360px; margin: 0 auto; width: 100%; }

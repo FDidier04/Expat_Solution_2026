@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez ExpatSolutions pour échanger simplement sur votre projet entrepreneurial au Congo.">
+  <title>Contact | ExpatSolutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact-page">
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="ExpatSolutions - Accueil">
+      <img src="assets/logo-expat-solutions.png" alt="ExpatSolutions">
+    </a>
+
+    <button class="menu-toggle" aria-expanded="false" aria-label="Ouvrir le menu">
+      <span></span><span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="index.html#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
+      <a href="index.html#expertises" data-fr="Expertises" data-en="Expertise">Expertises</a>
+      <a href="index.html#actualites" data-fr="Actualités" data-en="News">Actualités</a>
+      <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+      <button class="lang-switch" aria-label="Changer la langue"><strong>FR</strong><span>/</span> EN</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact contact-standalone section">
+      <div>
+        <p class="eyebrow light" data-fr="Nous contacter" data-en="Contact us">Nous contacter</p>
+        <h1 data-fr="Votre projet mérite un premier échange." data-en="Your project deserves a first conversation.">Votre projet mérite<br>un premier échange.</h1>
+        <p data-fr="Envoyez-nous quelques informations et nous reviendrons vers vous rapidement." data-en="Send us a few details and we will get back to you quickly.">Envoyez-nous quelques informations et nous reviendrons vers vous rapidement.</p>
+        <div class="contact-details" aria-label="Coordonnées">
+          <a href="tel:+242066479724">+242 06 647 9724</a>
+          <a href="tel:+33749145995">+33 7 49 14 59 95</a>
+          <a href="mailto:contact@expatsolutions.com">contact@expatsolutions.com</a>
+        </div>
+      </div>
+
+      <form class="consultation-form" action="mailto:contact@expatsolutions.com" method="post" enctype="text/plain">
+        <h2 data-fr="Planifiez une consultation" data-en="Schedule a consultation">Planifiez une consultation</h2>
+        <span class="form-mark" aria-hidden="true">⌄</span>
+        <div class="form-grid">
+          <label>Prénom <em>*</em><input type="text" name="prenom" placeholder="Exemple : Jane" required></label>
+          <label>Nom <em>*</em><input type="text" name="nom" placeholder="Exemple : Doe" required></label>
+        </div>
+        <label>A quel stade situez-vous l’avancement de votre projet ? <em>*</em><input type="text" name="avancement_projet" placeholder="Exemple : Idée / étude / création / développement" required></label>
+        <label>Email <em>*</em><input type="email" name="email" placeholder="Exemple : jane.doe@exemple.com" required></label>
+        <label>Téléphone <em>*</em><input type="tel" name="telephone" placeholder="Exemple : +33000000000" required></label>
+        <label>Pouvez-vous décrire en quelques mots votre projet ? <em>*</em><input type="text" name="description_courte" placeholder="Exemple : Création d’une société de services à Brazzaville" required></label>
+        <label>Message <em>*</em><textarea name="message" placeholder="Exemple : Entrer votre message ici ...." required></textarea></label>
+        <div class="fake-recaptcha" aria-label="protected by reCAPTCHA">
+          <span>protected by reCAPTCHA</span>
+          <strong>↻</strong>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <a class="footer-logo-small" href="index.html" aria-label="ExpatSolutions - Accueil">
+        <img src="assets/logo-expat-solutions.png" alt="ExpatSolutions">
+      </a>
+      <address>
+        <span>Brazzaville, République du Congo</span>
+        <span>Paris, France</span>
+        <span>Lun - Ven · 8h00 - 17h00</span>
+      </address>
+      <div class="footer-phones">
+        <a href="tel:+242066479724">T : +242 06 647 9724</a>
+        <a href="tel:+33749145995">T : +33 7 49 14 59 95</a>
+        <a href="mailto:contact@expatsolutions.com">E : contact@expatsolutions.com</a>
+      </div>
+      <nav class="footer-mini-social" aria-label="Réseaux sociaux">
+        <a href="#"><span>f</span>Facebook</a>
+        <a href="#"><span>in</span>LinkedIn</a>
+        <a href="#"><span>X</span>Twitter</a>
+        <a href="#"><span>▶</span>Youtube</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Tous droits réservés.</p>
+      <a href="#">Mentions légales</a>
+      <a href="#">Conditions générales d’utilisation</a>
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">Politique des cookies</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
